@@ -1,0 +1,18 @@
+{
+  "name": "humble-ai-chatbot-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for Humble AI Chatbot",
+  "type": "module",
+  "scripts": {
+    "start": "python -m http.server 3005 --directory public",
+    "dev": "python -m http.server 3005 --directory public"
+  },
+  "keywords": [
+    "chatbot",
+    "humble-ai",
+    "frontend"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
