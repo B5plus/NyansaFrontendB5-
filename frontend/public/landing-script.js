@@ -3,7 +3,7 @@ const chatInput = document.getElementById("chatInput");
 const chatSendBtn = document.getElementById("chatSendBtn");
 const chatMessages = document.getElementById("chatMessages");
 let currentChatId = null;
-const apiBaseUrl = "http://localhost:3001";
+const apiBaseUrl = "https://nyansabackb5.onrender.com";
 
 // Clear welcome message on first message
 let welcomeCleared = false;
