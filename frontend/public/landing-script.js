@@ -16,14 +16,13 @@ function checkDisclaimerStatus() {
   }
 }
 
-// Handle agree button
-agreeBtn.addEventListener("click", () => {
-  localStorage.setItem("disclaimerAgreed", "true");
-  disclaimerModal.classList.add("hidden");
-});
-
-// Handle read disclaimer button
+// Handle read disclaimer button - opens disclaimer and saves to localStorage
 readDisclaimerBtn.addEventListener("click", () => {
+  // Save to localStorage
+  localStorage.setItem("disclaimerAgreed", "true");
+  // Close the modal
+  disclaimerModal.classList.add("hidden");
+  // Open disclaimer page in new tab
   window.open(disclaimerURL, "_blank");
 });
 
