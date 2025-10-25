@@ -1084,6 +1084,18 @@ body {
     font-weight: 500;
 }
 
+.disclaimer-link {
+    color: #c41e3a;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.disclaimer-link:hover {
+    text-decoration: underline;
+    color: #a01830;
+}
+
 .disclaimer-buttons {
     display: flex;
     gap: 12px;

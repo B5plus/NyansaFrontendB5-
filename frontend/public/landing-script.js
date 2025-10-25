@@ -1,6 +1,7 @@
 ﻿// Disclaimer Modal Logic
 const disclaimerModal = document.getElementById("disclaimerModal");
-const readDisclaimerBtn = document.getElementById("readDisclaimerBtn");
+const closeDisclaimerBtn = document.getElementById("closeDisclaimerBtn");
+const agreeBtn = document.getElementById("agreeBtn");
 const disclaimerURL = "https://chatbotdisclaimer.onrender.com";
 
 // Check if user has already agreed to disclaimer
@@ -15,8 +16,13 @@ function checkDisclaimerStatus() {
   }
 }
 
-// Handle read disclaimer button - opens disclaimer and saves to localStorage
-readDisclaimerBtn.addEventListener("click", () => {
+// Handle close button - just closes the modal without saving
+closeDisclaimerBtn.addEventListener("click", () => {
+  disclaimerModal.classList.add("hidden");
+});
+
+// Handle agree & continue button - opens disclaimer and saves to localStorage
+agreeBtn.addEventListener("click", () => {
   // Save to localStorage
   localStorage.setItem("disclaimerAgreed", "true");
   // Close the modal
