@@ -1,4 +1,36 @@
-﻿// Chat functionality
+﻿// Disclaimer Modal Logic
+const disclaimerModal = document.getElementById("disclaimerModal");
+const agreeBtn = document.getElementById("agreeBtn");
+const readDisclaimerBtn = document.getElementById("readDisclaimerBtn");
+const disclaimerURL = "https://chatbotdisclaimer.onrender.com";
+
+// Check if user has already agreed to disclaimer
+function checkDisclaimerStatus() {
+  const disclaimerAgreed = localStorage.getItem("disclaimerAgreed");
+  if (!disclaimerAgreed) {
+    // Show disclaimer modal
+    disclaimerModal.classList.remove("hidden");
+  } else {
+    // Hide disclaimer modal
+    disclaimerModal.classList.add("hidden");
+  }
+}
+
+// Handle agree button
+agreeBtn.addEventListener("click", () => {
+  localStorage.setItem("disclaimerAgreed", "true");
+  disclaimerModal.classList.add("hidden");
+});
+
+// Handle read disclaimer button
+readDisclaimerBtn.addEventListener("click", () => {
+  window.open(disclaimerURL, "_blank");
+});
+
+// Check disclaimer on page load
+window.addEventListener("DOMContentLoaded", checkDisclaimerStatus);
+
+// Chat functionality
 const chatInput = document.getElementById("chatInput");
 const chatSendBtn = document.getElementById("chatSendBtn");
 const chatMessages = document.getElementById("chatMessages");
