@@ -1,6 +1,5 @@
 ﻿// Disclaimer Modal Logic
 const disclaimerModal = document.getElementById("disclaimerModal");
-const agreeBtn = document.getElementById("agreeBtn");
 const readDisclaimerBtn = document.getElementById("readDisclaimerBtn");
 const disclaimerURL = "https://chatbotdisclaimer.onrender.com";
 
