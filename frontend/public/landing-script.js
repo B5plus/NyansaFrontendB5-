@@ -2,6 +2,7 @@
 const disclaimerModal = document.getElementById("disclaimerModal");
 const closeDisclaimerBtn = document.getElementById("closeDisclaimerBtn");
 const agreeBtn = document.getElementById("agreeBtn");
+const disclaimerLink = document.querySelector(".disclaimer-link");
 const disclaimerURL = "https://chatbotdisclaimer.onrender.com";
 
 // Check if user has already agreed to disclaimer
@@ -23,6 +24,17 @@ closeDisclaimerBtn.addEventListener("click", () => {
 
 // Handle agree & continue button - opens disclaimer and saves to localStorage
 agreeBtn.addEventListener("click", () => {
+  // Save to localStorage
+  localStorage.setItem("disclaimerAgreed", "true");
+  // Close the modal
+  disclaimerModal.classList.add("hidden");
+  // Open disclaimer page in new tab
+  window.open(disclaimerURL, "_blank");
+});
+
+// Handle read more link - saves to localStorage and opens disclaimer
+disclaimerLink.addEventListener("click", (e) => {
+  e.preventDefault();
   // Save to localStorage
   localStorage.setItem("disclaimerAgreed", "true");
   // Close the modal
