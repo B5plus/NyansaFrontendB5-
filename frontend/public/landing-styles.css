@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+/* Prevent zoom on input fields in mobile browsers (iOS Safari/Chrome) */
+input,
+textarea,
+select,
+button {
+    font-size: 16px !important;
+    -webkit-text-size-adjust: 100%;
+    touch-action: manipulation;
+}
+
 html, body {
     height: 100%;
     width: 100%;
