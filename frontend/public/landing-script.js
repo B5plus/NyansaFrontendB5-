@@ -153,7 +153,17 @@ async function sendChatMessage() {
   } catch (error) {
     console.error("Error:", error);
     removeTypingIndicator();
-    addChatMessage(`Error: ${error.message}`, "assistant");
+
+    // Show more detailed error message
+    let errorMessage = error.message;
+    if (errorMessage.includes("Failed to send message")) {
+      errorMessage = "Backend service error. Please try again later.";
+    } else if (errorMessage.includes("Failed to create chat")) {
+      errorMessage =
+        "Could not create chat session. Please refresh and try again.";
+    }
+
+    addChatMessage(`Error: ${errorMessage}`, "assistant");
   }
 }
 
