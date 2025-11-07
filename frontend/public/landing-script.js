@@ -108,8 +108,10 @@ async function sendChatMessage() {
     );
 
     if (!response.ok) {
+      const errorData = await response.text();
+      console.error("API Error Response:", errorData);
       throw new Error(
-        `Failed to send message: ${response.status} ${response.statusText}`
+        `Failed to send message: ${response.status} ${response.statusText} - ${errorData}`
       );
     }
 
